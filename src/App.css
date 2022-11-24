@@ -1,0 +1,30 @@
+nav {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.pokeapi-image {
+  width: 160px;
+}
+
+.searchbar-container {
+  background-color: yellowgreen;
+  display: flex;
+  align-items: center;
+}
+
+.searchbar-container input {
+  margin-right: 10px;
+  height: 25px;
+  border-radius: 4px;
+}
+
+.serach-btn button {
+  height: 30px;
+  padding: 0 25px;
+  margin: none;
+  border-radius: 4px;
+}
