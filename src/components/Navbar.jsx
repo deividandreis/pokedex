@@ -1,5 +1,4 @@
 import React from "react";
-import Searchbar from "./Searchbar";
 
 const Navbar = () => {
   return (
@@ -9,7 +8,6 @@ const Navbar = () => {
         src="https://raw.githubusercontent.com/PokeAPI/media/master/logo/pokeapi_256.png"
         className="pokeapi-image"
       />
-      <Searchbar />
     </nav>
   );
 };

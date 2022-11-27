@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Searchbar = () => {
-  const [serch, setSearch] = useState("");
+  const [search, setSearch] = useState("");
+  const navigate = useNavigate();
 
+  const HandleInput = (props) => {
+    navigate(`/search?q=${search}`);
+    setSearch("");
+  };
+  
   return (
     <div className="searchbar-container">
       <div className="searchbar">
@@ -12,7 +19,7 @@ const Searchbar = () => {
         />
       </div>
       <div className="serach-btn">
-        <button>Buscar</button>
+        <button onClick={HandleInput}>Buscar</button>1
       </div>
     </div>
   );
