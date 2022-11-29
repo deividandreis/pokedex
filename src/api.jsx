@@ -1,11 +1,6 @@
-import { useSearchParams } from "react-router-dom";
-
-const SearchAPI = async () => {
-  const [searchParams] = useSearchParams();
-  const query = searchParams.get("q");
-
+export const SearchPokemon = async (pokemon) => {
   try {
-    const url = `https://pokeapi.co/api/v2/pokemon/${query}`;
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
     const res = await fetch(url);
     const data = await res.json();
 
@@ -14,5 +9,3 @@ const SearchAPI = async () => {
     console.log("deu merda" + error);
   }
 };
-
-export default SearchAPI;

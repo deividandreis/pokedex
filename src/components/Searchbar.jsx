@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { SearchPokemon } from "../api";
 
-const Searchbar = () => {
+const Searchbar = (props) => {
   const [search, setSearch] = useState("");
-  const navigate = useNavigate();
+  const [pokemon, setPokemon] = useState();
 
-  const HandleInput = (props) => {
-    navigate(`/search?q=${search}`);
-    setSearch("");
+  const HandleButtonClickHandler = () => {
+    onSearchHandler(search);
   };
-  
+
+  const onSearchHandler = async (pokemon) => {
+    const result = await SearchPokemon(pokemon);
+    setPokemon(result);
+    console.log("resultado " + result);
+  };
+
   return (
     <div className="searchbar-container">
       <div className="searchbar">
@@ -19,8 +24,17 @@ const Searchbar = () => {
         />
       </div>
       <div className="serach-btn">
-        <button onClick={HandleInput}>Buscar</button>1
+        <button onClick={HandleButtonClickHandler}>Buscar</button>
       </div>
+
+      {pokemon ? (
+        <div>
+          <div>Nome: {pokemon.name}</div>
+          <div>Peso: {pokemon.weight}</div>
+          <img src={pokemon.sprites.front_default} alt={pokemon.name} />
+
+        </div>
+      ) : null}
     </div>
   );
 };
