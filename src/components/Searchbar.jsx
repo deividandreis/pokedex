@@ -5,14 +5,14 @@ const Searchbar = (props) => {
   const [search, setSearch] = useState("");
   const [pokemon, setPokemon] = useState();
 
-  const HandleButtonClickHandler = () => {
-    onSearchHandler(search);
-  };
-
   const onSearchHandler = async (pokemon) => {
     const result = await SearchPokemon(pokemon);
     setPokemon(result);
     console.log("resultado " + result);
+  };
+
+  const HandleButtonClickHandler = () => {
+    onSearchHandler(search);
   };
 
   return (
@@ -32,7 +32,6 @@ const Searchbar = (props) => {
           <div>Nome: {pokemon.name}</div>
           <div>Peso: {pokemon.weight}</div>
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
-
         </div>
       ) : null}
     </div>
