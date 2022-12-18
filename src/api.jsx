@@ -4,11 +4,10 @@ export const SearchPokemon = async (pokemon) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    return await data
+    return await data;
 
-    // console.log("Chamar pelo Search",data);
   } catch (error) {
-    console.log("deu merda" + error);
+    console.log(error);
   }
 };
 
@@ -18,11 +17,10 @@ export const getPokemons = async (limit = 50, offset = 0) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    return await data
+    return await data;
 
-    // console.table("Buscar todos os pokemons da pagina inicial", data);
   } catch (error) {
-    console.log("deu merda" + error);
+    console.log(error);
   }
 };
 
@@ -31,10 +29,9 @@ export const getPokemonData = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
 
-    return await data
+    return await data;
 
-    // console.table("Buscar todos os pokemons da pagina inicial", data);
   } catch (error) {
-    console.log("deu merda" + error);
+    console.log(error);
   }
 };

@@ -21,7 +21,7 @@ function App() {
 
   const [notFound, setNotFound] = useState();
 
-  const itensPerPages = 25;
+  const itensPerPages = 27;
 
   const fetchPokemons = async () => {
     try {
