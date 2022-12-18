@@ -2,6 +2,8 @@
 
 Pokedex em  React JS, utilizando os dados da API,  PokéAPI.
 
+https://pokeapi.co/
+
 ### Features
 
 - Buscar os dados da API.
